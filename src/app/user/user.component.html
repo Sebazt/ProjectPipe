@@ -1,0 +1,22 @@
+<p>user works!</p>
+<button (click)="getUsers()">Obtener nombre suarios</button>
+
+
+<ol *ngIf="users$ | async as users">
+  <button (click)="showUser(users)" >Obtener Json Usuarios</button>
+  <li *ngFor="let user of users">
+    {{ user.name | firstName }}
+  </li>
+</ol>
+
+
+<!-- ayuda hacer pruebas porque me las trae en json-->
+<!-- <pre *ngIf="users$ | async | moreThanFive as users">
+ {{users | json }}
+</pre> -->
+
+<form *ngIf="userControl">
+
+  <input type="text" [formControl]="userControl">
+
+</form>
